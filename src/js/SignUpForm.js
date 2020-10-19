@@ -226,7 +226,7 @@ class SignUpForm extends Component {
               id={ this.id.genderMale }
               onChange={ this.changeHandler }>
             </input>
-            <Label htmlFor={this.id.genderMale}>Male</Label>
+            <Label htmlFor={this.id.genderMale}>{Gender.MALE}</Label>
             
             <input
               type="radio"
@@ -236,7 +236,7 @@ class SignUpForm extends Component {
               id={ this.id.genderFemale }
               onChange={ this.changeHandler }>
             </input>
-            <Label htmlFor={ this.id.genderFemale }>Female</Label>
+            <Label htmlFor={ this.id.genderFemale }>{Gender.FEMALE}</Label>
           </div>
           
         </Box>
