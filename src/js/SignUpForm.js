@@ -26,6 +26,9 @@ const Form = styled.form`
   border-radius: 5px;
   border: 1px solid rgba(0,0,255,0.3);
   box-shadow: 0 0 1px rgba(0,0,255,0.3);
+  :not(:last-child){
+    margin-bottom: 15px;
+  }
 `;
 
 const Box = styled.div`
@@ -212,17 +215,6 @@ class SignUpForm extends Component {
           </InputText>
         </Box>
 
-        <Box>          
-          <Label checkbox checked={ this.state.agreed } htmlFor={this.id.agreed}>Agree to terms</Label>
-          <Checkbox
-            type="checkbox"
-            checked={ agreed }
-            name="agreed"
-            id={ this.id.agreed }
-            onChange={ this.changeHandler }>
-          </Checkbox>
-        </Box>
-        
         <Box radio>
           <Label as='div'>Choose your gender</Label>
           <div>
@@ -272,6 +264,17 @@ class SignUpForm extends Component {
             id={ this.id.message } 
             placeholder='Enter your message'>             
           </InputText>
+        </Box>
+
+        <Box>          
+          <Label checkbox checked={ this.state.agreed } htmlFor={this.id.agreed}>Agree to terms</Label>
+          <Checkbox
+            type="checkbox"
+            checked={ agreed }
+            name="agreed"
+            id={ this.id.agreed }
+            onChange={ this.changeHandler }>
+          </Checkbox>
         </Box>
 
         <Button type="submit" disabled={ !agreed }>Sign up as { login }</Button>

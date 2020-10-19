@@ -15,22 +15,14 @@
     "styled-components": "^5.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "deploy": "gh-pages -d dist",
+    "eject": "react-scripts eject"
   },
-
   "homepage": "https://StanislavYurchenko.github.io/goit-react-hw-02-feedback",
-    "repository": {
-    "type": "git",
-    "url": "git+https://github.com/StanislavYurchenko/goit-react-hw-02-feedback.git"
-  },
-    "bugs": {
-    "url": "https://github.com/StanislavYurchenko/goit-react-hw-02-feedback"
-  },
-
   "eslintConfig": {
     "extends": "react-app"
   },

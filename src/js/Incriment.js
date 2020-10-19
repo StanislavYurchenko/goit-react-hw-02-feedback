@@ -1,6 +1,32 @@
 import React, { Component }  from 'react';
-// import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
+const Container = styled.div`
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,255,0.3);
+  box-shadow: 0 0 1px rgba(0,0,255,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  :not(:last-child){
+    margin-bottom: 15px;
+  }
+`;
+
+const Button = styled.button`
+  flex-basis: 43%;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,255,0.3);
+  outline: none;
+  box-shadow: 0 0 1px rgba(0,0,255,0.3);
+  transition: all 0.3s linear;
+  background-color: #FFF;
+  padding: 5px;
+  font-size: 16px;
+`;
 
 class Increment extends Component {
   static defaultProps = {
@@ -25,11 +51,11 @@ class Increment extends Component {
     const { step } = this.props;
 
     return (
-      <div>
+      <Container>
         <span>{this.state.value}</span>
-        <button type="button" onClick = {this.incrementHandler} >Increment by {step}</button>
-        <button type="button" onClick = {this.decrementHandler} >Decrement by {step}</button>
-      </div>
+        <Button type="button" onClick = {this.incrementHandler} >Increment by {step}</Button>
+        <Button type="button" onClick = {this.decrementHandler} >Decrement by {step}</Button>
+      </Container>
     );
   }
 }

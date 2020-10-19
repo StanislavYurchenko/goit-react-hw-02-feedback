@@ -1,9 +1,21 @@
 import React, { Component } from 'react';
-// import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Statistics from './Statistics.js';
 import FeedbackOptions from './FeedbackOptions.js';
 import Section from './Section.js';
 import Notification from './Notification.js';
+
+const Container = styled.div`
+  margin: 0 auto;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,255,0.3);
+  box-shadow: 0 0 1px rgba(0,0,255,0.3);
+  :not(:last-child){
+    margin-bottom: 15px;
+  }
+`;
 
 
 const INITIAL_STATE = {
@@ -11,7 +23,6 @@ const INITIAL_STATE = {
   neutral: 0,
   bad: 0,
 }
-
 
 class Feedback extends Component {
   static defaultProps = {};
@@ -21,6 +32,7 @@ class Feedback extends Component {
   countTotalFeedback = () => {
     return Object.values(this.state).reduce((acc,el) => acc += el);
   }
+  
   countPositiveFeedbackPercentage = () => {
     return Math.round(100 * this.state.good / this.countTotalFeedback());
   }
@@ -36,7 +48,7 @@ class Feedback extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
 
     return (
-      <div>
+      <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options= { ["good", "neutral", "bad"] } 
@@ -57,7 +69,7 @@ class Feedback extends Component {
               : <Notification message="No feedback given"/>
           }    
         </Section>
-      </div>
+      </Container>
     );
   }
 }

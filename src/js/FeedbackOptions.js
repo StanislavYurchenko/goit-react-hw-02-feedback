@@ -1,21 +1,24 @@
-import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
+import React from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import FeedbackButton from './FeedbackButton.js';
 
 
-
-
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 function FeedbackOptions({ options, onLeaveFeedback }) {
 
   const [ good, neutral, bad ] = options;
 
   return (
-    <div>
-      <button name={ good } onClick={ onLeaveFeedback } type='button'>{ good }</button>
-      <button name={ neutral } onClick={ onLeaveFeedback } type='button'>{ neutral }</button>
-      <button name={ bad } onClick={ onLeaveFeedback } type='button'>{ bad }</button>
-    </div>
+    <Container>
+      <FeedbackButton name={ good } callback={ onLeaveFeedback } />
+      <FeedbackButton name={ neutral } callback={onLeaveFeedback} />
+      <FeedbackButton name={ bad } callback={ onLeaveFeedback } />
+    </Container>
   )
 }
 
