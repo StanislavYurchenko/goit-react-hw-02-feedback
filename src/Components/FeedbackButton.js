@@ -12,6 +12,7 @@ const Button = styled.button`
   background-color: #FFF;
   padding: 5px;
   font-size: 16px;
+  cursor: pointer;
 `;
 
 function FeedbackButton({ name, callback}) {

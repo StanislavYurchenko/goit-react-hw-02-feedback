@@ -125,11 +125,15 @@ const Button = styled.button`
   padding: 5px;
   width: 100%;
   font-size: 20px;
+  cursor: pointer;
 
   :hover:not(:disabled){
     cursor: pointer;
     box-shadow: 0 0 5px rgba(0,0,255,0.5);
     border: 1px solid rgba(0,0,255,1);
+  }
+  :disabled{
+    cursor: default;
   }
 `;
 

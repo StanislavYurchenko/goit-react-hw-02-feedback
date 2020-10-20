@@ -26,6 +26,7 @@ const Button = styled.button`
   background-color: #FFF;
   padding: 5px;
   font-size: 16px;
+  cursor: pointer;
 `;
 
 class Increment extends Component {

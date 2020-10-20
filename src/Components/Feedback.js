@@ -18,16 +18,15 @@ const Container = styled.div`
 `;
 
 
-const INITIAL_STATE = {
-  good: 0,
-  neutral: 0,
-  bad: 0,
-}
 
 class Feedback extends Component {
   static defaultProps = {};
 
-  state = { ...INITIAL_STATE };
+  state = {
+    good: 0,
+    neutral: 0,
+    bad: 0,
+  };
 
   countTotalFeedback = () => {
     return Object.values(this.state).reduce((acc,el) => acc += el);
